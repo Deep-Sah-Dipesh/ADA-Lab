@@ -40,9 +40,11 @@ void reverseDirection(int *perm, bool *dir, int n, int largest) {
 
 int main() {
     int n;
+    
+    printf("\tJohnson Trotter Algorithm\n");
 
     // Read the number of elements
-    printf("Enter the number of elements: ");
+    printf("\nEnter the number of elements: ");
     scanf("%d", &n);
 
     // Initialize the permutation and directions
