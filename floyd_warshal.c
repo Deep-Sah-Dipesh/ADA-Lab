@@ -36,7 +36,7 @@ void floydWarshall(int graph[][V]) {
 
 // Function to print the solution
 void printSolution(int dist[][V]) {
-    printf("The following matrix shows the shortest distances between every pair of vertices:\n");
+    printf("\nThe following matrix shows the shortest distances between every pair of vertices:\n");
     for (int i = 0; i < V; i++) {
         for (int j = 0; j < V; j++) {
             if (dist[i][j] == INT_MAX)
@@ -66,6 +66,7 @@ int main() {
                         {INT_MAX, INT_MAX, INT_MAX, 0} };
 
     // Print the solution
+    printf("\t All Pair Shortest Path using Floyd's Algorithm\n");
     floydWarshall(graph);
     return 0;
 }
