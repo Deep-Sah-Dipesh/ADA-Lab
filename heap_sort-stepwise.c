@@ -34,7 +34,7 @@ void heapify(int arr[], int n, int i) {
     // If the largest is not root
     if (largest != i) {
         swap(&arr[i], &arr[largest]);
-
+        
         // Recursively heapify the affected subtree
         heapify(arr, n, largest);
     }
@@ -65,7 +65,8 @@ void heapSort(int arr[], int n) {
 
 int main() {
     int n;
-
+    printf("\t Heap Sort Implementation...\n");
+    
     // Take the number of elements as input
     printf("Enter number of elements: ");
     scanf("%d", &n);
