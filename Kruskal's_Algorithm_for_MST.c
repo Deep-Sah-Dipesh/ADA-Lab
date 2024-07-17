@@ -60,9 +60,9 @@ int myComp(const void* a, const void* b) {
 // The main function to construct MST using Kruskal's algorithm
 void KruskalMST(struct Graph* graph) {
     int V = graph->V;
-    struct Edge result[V];
-    int e = 0;
-    int i = 0;
+    struct Edge result[V];  // Tnis will store the resultant MST
+    int e = 0;  // An index variable, used for result[]
+    int i = 0;  // An index variable, used for sorted edges
 
     // Step 1: Sort all the edges in non-decreasing order of their weight
     qsort(graph->edge, graph->E, sizeof(graph->edge[0]), myComp);
@@ -76,6 +76,7 @@ void KruskalMST(struct Graph* graph) {
 
     // Number of edges to be taken is equal to V-1
     while (e < V - 1 && i < graph->E) {
+        // Step 2: Pick the smallest edge. And increment the index for next iteration
         struct Edge next_edge = graph->edge[i++];
 
         int x = find(subsets, next_edge.src);
@@ -89,11 +90,13 @@ void KruskalMST(struct Graph* graph) {
     }
 
     // Print the contents of result[] to display the built MST
-    printf("Edge \tWeight\n");
+    printf("\nEdge \tWeight\n");
+    int totalWeight = 0;
     for (i = 0; i < e; i++) {
         printf("%d - %d \t%d\n", result[i].src, result[i].dest, result[i].weight);
+        totalWeight += result[i].weight;
     }
-
+    printf("\nTotal Minimum Weight: %d\n", totalWeight);
     free(subsets);
 }
 
@@ -101,7 +104,7 @@ void KruskalMST(struct Graph* graph) {
 int main() {
     int V, E;
 
-    printf("\t Kruskal's Algorithm for Minimum Spanning Tree\n");
+    printf("\tKruskal's Algorithm for Minimum Spanning Tree\n");
 
     printf("Enter the number of vertices: ");
     scanf("%d", &V);
@@ -110,7 +113,7 @@ int main() {
 
     struct Graph* graph = createGraph(V, E);
 
-    printf("Enter the edges (source, destination, weight):\n");
+    printf("\nEnter the edges (source, destination, weight):\n");
     for (int i = 0; i < E; i++) {
         scanf("%d %d %d", &graph->edge[i].src, &graph->edge[i].dest, &graph->edge[i].weight);
     }
