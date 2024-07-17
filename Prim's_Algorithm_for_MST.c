@@ -17,10 +17,13 @@ int minKey(int key[], bool mstSet[], int V) {
 
 // Function to print the constructed MST
 void printMST(int parent[], int **graph, int V) {
-    printf("Edge \tWeight\n");
+    printf("\nEdge \tWeight\n");
+    int totalWeight = 0;
     for (int i = 1; i < V; i++) {
         printf("%d - %d \t%d \n", parent[i], i, graph[i][parent[i]]);
+        totalWeight += graph[i][parent[i]];
     }
+    printf("\nTotal Minimum Weight: %d\n", totalWeight);
 }
 
 // Function to construct and print the MST for a graph
@@ -68,7 +71,7 @@ int main() {
 
     printf("\t Prim's Algorithm for MST\n");
 
-    printf("Enter the number of vertices: ");
+    printf("\nEnter the number of vertices: ");
     scanf("%d", &V);
 
     // Dynamic allocation of adjacency matrix
