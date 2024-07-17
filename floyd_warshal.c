@@ -2,7 +2,7 @@
 #include <limits.h>
 
 // Number of vertices in the graph
-#define V 4 
+#define V 4
 
 // Function to print the solution matrix
 void printSolution(int dist[][V]);
@@ -33,7 +33,6 @@ void floydWarshall(int graph[][V]) {
     // Print the shortest distance matrix
     printSolution(dist);
 }
-m 
 // Function to print the solution
 void printSolution(int dist[][V]) {
     printf("\nThe following matrix shows the shortest distances between every pair of vertices:\n");
