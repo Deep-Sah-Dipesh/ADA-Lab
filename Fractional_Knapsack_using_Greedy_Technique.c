@@ -36,6 +36,7 @@ double fractionalKnapsack(int W, struct Item arr[], int n) {
 int main() {
     int n, W;
 
+    printf("\t Fractional Knapsack Algorithm.\n");
     printf("Enter the number of items: ");
     scanf("%d", &n);
 
