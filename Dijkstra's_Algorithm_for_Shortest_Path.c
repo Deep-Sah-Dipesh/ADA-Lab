@@ -15,7 +15,7 @@ int minDistance(int dist[], bool sptSet[], int V) {
 }
 
 void printSolution(int dist[], int V) {
-    printf("Vertex \t Distance from Source\n");
+    printf("\nVertex \t Distance from Source\n");
     for (int i = 0; i < V; i++)
         printf("%d \t %d\n", i, dist[i]);
 }
@@ -57,13 +57,13 @@ int main() {
     }
 
     int graph[MAX][MAX];
-    printf("Enter the adjacency matrix:\n");
+    printf("\nEnter the adjacency matrix:\n");
     for (int i = 0; i < V; i++)
         for (int j = 0; j < V; j++)
             scanf("%d", &graph[i][j]);
 
     int src;
-    printf("Enter the source vertex: ");
+    printf("\nEnter the source vertex: ");
     scanf("%d", &src);
 
     if (src < 0 || src >= V) {

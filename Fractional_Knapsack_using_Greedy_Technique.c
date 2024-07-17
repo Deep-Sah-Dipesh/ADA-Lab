@@ -46,20 +46,20 @@ int main() {
         return 1;
     }
 
-    printf("Enter the weights and values of the items:\n");
+    printf("\nEnter the weights and values of the items:\n");
     for (int i = 0; i < n; i++) {
-        printf("Item %d - Weight: ", i + 1);
+        printf("\nItem %d - Weight: ", i + 1);
         scanf("%d", &arr[i].weight);
         printf("Item %d - Value: ", i + 1);
         scanf("%d", &arr[i].value);
     }
 
-    printf("Enter the capacity of the knapsack: ");
+    printf("\nEnter the capacity of the knapsack: ");
     scanf("%d", &W);
 
     double maxValue = fractionalKnapsack(W, arr, n);
 
-    printf("Maximum value in Knapsack = %.2f\n", maxValue);
+    printf("\nMaximum value in Knapsack = %.2f\n", maxValue);
 
     free(arr); // Free dynamically allocated memory
 
